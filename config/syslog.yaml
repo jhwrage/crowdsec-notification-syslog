@@ -1,0 +1,34 @@
+
+# CrowdSec Syslog notification plugin configuration.
+# Install as /etc/crowdsec/notifications/syslog.yaml
+
+type: syslog
+name: syslog_default
+log_level: info
+
+# Destination in host:port format.
+# 192.0.2.0/24 is reserved for documentation examples.
+syslog_server: 192.0.2.50:514
+
+# Supported transports: udp, tcp.
+# TCP uses RFC 6587 octet-counting framing.
+syslog_protocol: tcp
+
+# RFC 5424 PRI components.
+# local0 = 16; warning = 4; PRI = 16*8+4 = 132.
+syslog_facility: 16
+syslog_severity: 4
+
+# RFC 5424 header fields.
+syslog_hostname: crowdsec01
+syslog_appname: crowdsec
+syslog_msgid: ALERT
+
+# Maximum network operation timeout.
+timeout: 5s
+
+# Rendered by CrowdSec before the notification is passed to the plugin.
+# The resulting text is sent as the RFC 5424 MSG field.
+format: |
+  CrowdSec notification:
+  {{ . }}

@@ -1,0 +1,20 @@
+
+# Build artifacts
+notification-syslog
+notification-syslog.exe
+*.test
+
+# Go workspace and vendor directory
+/vendor/
+go.work
+go.work.sum
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS-generated files
+.DS_Store
+Thumbs.db
