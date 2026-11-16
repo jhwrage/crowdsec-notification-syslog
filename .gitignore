@@ -1,7 +1,7 @@
 
 # Build artifacts
-notification-syslog
-notification-syslog.exe
+/notification-syslog
+/notification-syslog.exe
 *.test
 
 # Go workspace and vendor directory
